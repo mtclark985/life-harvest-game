@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Life Harvest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A financial literacy game where your farm reflects your financial health.
 
-## Available Scripts
+> **Status:** Active development — features and content are actively being added.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Concept
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Life Harvest is a browser-based educational game that teaches real-world personal finance through the lens of a living, breathing farm. Inspired by the structure of **The Game of Life** and the visuals of **Farmville**, players spin a wheel each turn to draw a financial event and must make a meaningful money decision in response.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The twist: your farm is a direct visual metaphor for your financial health. Make smart decisions — negotiate a raise, build an emergency fund, avoid predatory schemes — and your farm flourishes with sunflowers, silos, and horses. Make poor choices and watch it wither back to a shack and weeds.
 
-### `npm test`
+The game supports two modes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Kid Mode (under 10)** — simplified events around allowances, lemonade stands, and piggy banks, designed to introduce core saving concepts
+- **Adult Mode (10+)** — real-world scenarios covering student loans, 401(k) enrollment, rent vs. buy decisions, salary negotiation, and investment scams
 
-### `npm run build`
+Every decision surfaces a short financial lesson and personalized feedback, making the learning feel earned rather than lectured.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React 19** (Create React App)
+- **CSS Modules** — component-scoped styles, no CSS framework
+- **Vanilla JS** — no state management library; game state lives in React component state
+- **Emoji-driven UI** — farm visuals, wheel segments, and event cards are rendered with emoji for a lightweight, expressive look
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Prerequisites:** Node.js 18+ and npm
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repo
+git clone https://github.com/your-username/life-harvest-game.git
+cd life-harvest-game
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start the development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open [http://localhost:3000](http://localhost:3000) in your browser. The app hot-reloads on save.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Other Scripts
 
-### Code Splitting
+| Command | Description |
+|---|---|
+| `npm test` | Run tests in interactive watch mode |
+| `npm run build` | Build optimized production bundle to `/build` |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+  components/       # UI components (GameScreen, Farm, EventCard, SpinWheel, etc.)
+  data/
+    gameData.js     # All events, farm items, wheel segments, and initial state
+  App.js            # Root component and top-level screen routing
+```
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Game logic is driven by `gameData.js` — adding new events, farm items, or wheel segments requires only editing that file.
